@@ -1,0 +1,11 @@
+//；目录不能用中文命名
+{
+    "compilerOptions": {
+        "module": "ES2015",
+        "target": "ES2015",
+        "strict": true,
+        "noEmitOnError": true
+    },
+    // "exclude": ["node_modules"]
+
+}

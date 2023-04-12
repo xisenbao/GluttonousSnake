@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font: bold 20px "Courier";
+    overflow: hidden;
+}
+@bg-color: #7bd4a8;
+#container {
+    width: 360px;
+    height: 420px;
+    background-color: @bg-color;
+
+    margin: 100px auto;
+    border: 10px solid black;
+    border-radius: 40px;
+
+    display: flex;
+    flex-flow: column; //主轴方向是垂直方向的
+    align-items: center; //水平居中
+    justify-content: space-around;
+
+    
+
+    #stage{
+        width: 304px;
+        height: 304px;
+        border: 2px solid black;
+        position: relative;
+
+        .common {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            border: 1px solid @bg-color;
+
+        }
+
+        #snake{
+            //mixin
+            // .common {
+            //     width: 10px;
+            //     height: 10px;
+            //     position: absolute;
+            //     border: 1px solid @bg-color;
+
+            // }
+            // &>div{
+            //     .common;                
+            //     background-color: yellow;
+            //     border: 1px solid @bg-color;
+            // }
+
+
+
+            &>div{
+                .common;                
+                background-color: yellow;
+            }
+
+        }
+        #food{
+            .common;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-content: space-between;
+
+            &>div{
+                width: 4px;
+                height: 4px;
+                background-color: sienna;
+                transform: rotate(45deg);
+            }
+
+            left: 40px; //todo
+
+        }
+
+    }
+
+    #score-panel{
+        padding: 0 28px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
